@@ -1,5 +1,6 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js",
-  "/filme/[id]/page": "app/filme/[id]/page.js",
-  "/favoritos/page": "app/favoritos/page.js"
+  "/favoritos/page": "app/favoritos/page.js",
+  "/filme/[id]/page": "app/filme/[id]/page.js"
 }

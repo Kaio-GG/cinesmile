@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";  
 
 export const metadata: Metadata = {
-  title: "CineFinder",
+  title: "CineSmile",
+  icons:{
+    icon:"/CS.svg",
+  },
   description: "Busque filmes por nome, gênero e descubra novas produções.",
 };
 
