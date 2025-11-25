@@ -1,0 +1,45 @@
+.cp-header {
+  display: flex;
+  flex-direction: column;
+  height: 90px;
+  background-color: #000;
+  justify-content: space-between;
+  width: 100vw;
+
+  .pt-cima {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 20px 15px 10px 15px;
+  }
+
+  .pt-baixo {
+    height: 30px;
+    width: 100vw;
+    background-color: #171717;
+    padding: 0px 15px 0px 15px;
+    display: flex;
+    align-items: center;
+
+    .org {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+
+      a {
+        color: #fff;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover {
+          color: #f8d90f;      
+        }
+      }
+
+      .active {
+        color: #F0A124;        
+        font-weight: 600;
+      }
+    }
+  }
+}

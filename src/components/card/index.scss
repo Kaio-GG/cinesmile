@@ -1,0 +1,17 @@
+.cp-card-opcoes {
+  position: relative;
+
+  .icone-favorito {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    transition: transform .2s;
+
+    &:hover {
+      transform: scale(1.12);
+    }
+  }
+}

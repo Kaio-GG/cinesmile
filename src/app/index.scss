@@ -1,0 +1,48 @@
+.pg-landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #121212;
+  color: white;
+  width: 100vw;
+  min-height: 100vh;
+  .fltros {
+    margin-top: 5vh;
+    width: 90%;
+    text-align: left;
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    .fillinput {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+
+      input {
+        padding: 8px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        width: 200px;
+      }
+    }
+  }
+
+  .filmes {
+    width: 90%;
+    margin-top: 40px;
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+  }
+}

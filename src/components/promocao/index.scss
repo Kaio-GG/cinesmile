@@ -1,0 +1,40 @@
+.cp-promocao {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding-top: 90px;
+    justify-content: center;
+    position: relative;
+
+    .img {
+        border-radius: 20px;
+        transition: transform 0.3s ease-in-out; // Suaviza a transição de escala
+    }
+
+    .btn {
+        display: flex;
+        position: absolute;
+        align-items: center;
+        left: 17%;
+        top: 80%;
+        justify-content: center;
+        border-radius: 100%;
+        color: #fff;
+        background-color: rgba(81, 81, 81, 0.321);
+        height: 100px;
+        width: 100px;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out; // Suaviza a transição de opacidade
+    }
+}
+
+.cp-promocao:hover {
+    .btn {
+        cursor: pointer;
+        opacity: 1;
+    }
+
+    .img {
+        transform: scale(1.1); // Usa transform ao invés de scale diretamente
+    }
+}

@@ -1,0 +1,97 @@
+.main-carrossel{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+
+  .cp-carrossel {
+  display: flex;
+  position: relative;
+  width: 80%;
+  margin-top: 50px;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+
+  .carrossel-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    gap: 20px;            // distância entre os cards
+    padding: 10px 0;
+    align-items: center;
+  }
+
+  .carrossel-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card-carrossel {
+    flex: 0 0 auto;       // impede de encolher
+    width: 272px;         
+    height: 370px;        
+    overflow: hidden;     // corta tudo que sair do card
+    border-radius: 10px;
+    box-shadow: 0px 3px 19px 0px #00000038;
+    scroll-snap-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+  }
+
+  .card-carrossel img {
+    width: 272px;          // a imagem respeita o card
+    height: 370px;         
+    object-fit: cover;    // mantém proporção sem deformar
+  }
+
+  .card-carrossel:hover {
+    transform: scale(1.1);
+    z-index: 2; 
+  }
+
+  .btn-setaEsquerda,
+  .btn-setaDireita {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 60px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.2s ease;
+  }
+
+  .btn-setaEsquerda {
+    left: 10px;
+    background-image: url(../../../public/assets/image/seta-esquerda.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .btn-setaDireita {
+    right: 20px;
+    background-image: url(../../../public/assets/image/seta-direita.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .btn-setaEsquerda:hover,
+  .btn-setaDireita:hover {
+    transform: translateY(-50%) scale(1.2);
+  }
+}
+
+
+
+}
+
