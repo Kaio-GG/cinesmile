@@ -1,11 +1,12 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 export async function GET(
-  req: NextRequest,
+  _request: Request,
   context: { params: { id: string } }
 ) {
+  const id = context.params.id;
+
   try {
-    const { id } = context.params;
     const res = await fetch(`https://api.tvmaze.com/shows/${id}`);
 
     if (!res.ok) {
