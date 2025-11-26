@@ -3,14 +3,8 @@ import Image from "next/image";
 import "./index.scss";
 import { buscarFilmeId } from "@/service/api";
 
-type PageProps = {
-  params: {
-    id: string;
-  };
-};
-
-export default async function Filme({ params }: PageProps) {
-  const { id } = params;
+export default async function Filme(props: any) {
+  const { id } = props.params;
 
   const filme = await buscarFilmeId(id); 
   
