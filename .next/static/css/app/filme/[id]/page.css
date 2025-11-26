@@ -1,0 +1,134 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./src/app/filme/[id]/index.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.pg-ingressos {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #0d0d0d;
+  color: #fff;
+}
+.pg-ingressos h3 {
+  font-size: 26px;
+  margin: 20px 0 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-left: 5%;
+}
+.pg-ingressos .menu {
+  display: flex;
+  gap: 40px;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 100vw;
+  flex-wrap: wrap;
+}
+.pg-ingressos .menu .cartaz {
+  border-radius: 12px;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.08);
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+.pg-ingressos .menu .cartaz:hover {
+  transform: scale(1.02);
+}
+.pg-ingressos .menu .horarios {
+  flex: 1 1;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 15px;
+}
+.pg-ingressos .menu .horarios h4 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.pg-ingressos .menu .horarios .info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.pg-ingressos .menu .horarios .info .detalhes {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.pg-ingressos .menu .horarios .info .detalhes p {
+  margin: 5px 0;
+}
+.pg-ingressos .menu .horarios .info .detalhes p strong {
+  color: #ffcb05;
+}
+.pg-ingressos .menu .horarios .info .sinopse {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.pg-ingressos .menu .horarios .info .sinopse p {
+  text-align: justify;
+  margin-top: 5px;
+}
+@media (max-width: 768px) {
+  .pg-ingressos .menu {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .pg-ingressos .menu .cartaz {
+    height: 450px;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .pg-ingressos .menu .horarios h4 {
+    text-align: center;
+  }
+}
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./src/components/header/index.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.cp-header {
+  display: flex;
+  flex-direction: column;
+  height: 90px;
+  background-color: #000;
+  justify-content: space-between;
+  width: 100vw;
+}
+.cp-header .pt-cima {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 20px 15px 10px 15px;
+}
+.cp-header .pt-baixo {
+  height: 30px;
+  width: 100vw;
+  background-color: #171717;
+  padding: 0px 15px 0px 15px;
+  display: flex;
+  align-items: center;
+}
+.cp-header .pt-baixo .org {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+.cp-header .pt-baixo .org a {
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.cp-header .pt-baixo .org a:hover {
+  color: #f8d90f;
+}
+.cp-header .pt-baixo .org .active {
+  color: #F0A124;
+  font-weight: 600;
+}
