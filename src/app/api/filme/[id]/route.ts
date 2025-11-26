@@ -1,7 +1,7 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
-  req: Request,
+  req: NextRequest,
   context: { params: { id: string } }
 ) {
   try {
@@ -16,8 +16,7 @@ export async function GET(
     }
 
     const data = await res.json();
-    return NextResponse.json(data, { status: 200 });
-
+    return NextResponse.json(data);
   } catch (error) {
     return NextResponse.json(
       { error: "Erro interno no servidor", details: String(error) },
