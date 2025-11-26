@@ -1,0 +1,105 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./src/components/header/index.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.cp-header {
+  display: flex;
+  flex-direction: column;
+  height: 90px;
+  background-color: #000;
+  justify-content: space-between;
+  width: 100vw;
+}
+.cp-header .pt-cima {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 20px 15px 10px 15px;
+}
+.cp-header .pt-baixo {
+  height: 30px;
+  width: 100vw;
+  background-color: #171717;
+  padding: 0px 15px 0px 15px;
+  display: flex;
+  align-items: center;
+}
+.cp-header .pt-baixo .org {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+.cp-header .pt-baixo .org a {
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.cp-header .pt-baixo .org a:hover {
+  color: #f8d90f;
+}
+.cp-header .pt-baixo .org .active {
+  color: #F0A124;
+  font-weight: 600;
+}
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./src/app/index.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.pg-landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #121212;
+  color: white;
+  width: 100vw;
+  min-height: 100vh;
+}
+.pg-landing .fltros {
+  margin-top: 5vh;
+  width: 90%;
+  text-align: left;
+}
+.pg-landing .fltros h2 {
+  margin-bottom: 10px;
+}
+.pg-landing .fltros .fillinput {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.pg-landing .fltros .fillinput input {
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  width: 200px;
+}
+.pg-landing .filmes {
+  width: 90%;
+  margin-top: 40px;
+}
+.pg-landing .filmes h2 {
+  margin-bottom: 20px;
+}
+.pg-landing .filmes .cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./src/components/card/index.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.cp-card-opcoes {
+  position: relative;
+}
+.cp-card-opcoes .icone-favorito {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.cp-card-opcoes .icone-favorito:hover {
+  transform: scale(1.12);
+}
