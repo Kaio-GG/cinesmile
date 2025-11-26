@@ -3,9 +3,8 @@ import { NextResponse } from "next/server";
 export async function GET(req: Request, { params }: { params: { id: string } }) {
   try {
     const { id } = params;
-    console.log(id);
-    console.log("Aqio");
     const res = await fetch(`https://api.tvmaze.com/shows/${id}`);
+
     if (!res.ok) {
       return NextResponse.json(
         { error: "Erro ao buscar dados na API externa" },
