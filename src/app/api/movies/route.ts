@@ -1,3 +1,4 @@
+import { console } from "inspector";
 import { NextResponse } from "next/server";
 
 type TvMazeShowBase = {
@@ -21,6 +22,8 @@ const normalizar = (valor: string): string =>
     .replace(/[aeiou]/g, "");
 
 export async function GET(req: Request) {
+  console.log("AQUIIIII");
+
   const { searchParams } = new URL(req.url);
   const nome = searchParams.get("nome") ?? "";
   const genero = searchParams.get("genero") ?? "";

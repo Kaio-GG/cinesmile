@@ -12,7 +12,7 @@ export default async function Filme(props: any) {
     return (
       <main className="pg-ingressos">
         <Header />
-        <h3>Filme não encontrado 😢</h3>
+        <h3>Filme não encontrado</h3>
       </main>
     );
   }
