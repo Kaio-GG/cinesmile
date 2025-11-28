@@ -3,6 +3,7 @@ import Card from "@/components/card";
 import { cookies } from "next/headers";
 import "./index.scss";
 import { buscarFilmesFavoritos } from "@/service/api";
+import Icones from "@/components/footer";
 
 interface FilmeFavorito {
   id: number;
@@ -42,6 +43,8 @@ if (listaIds.length > 0) {
           </div>
         )}
       </section>
+
+         <Icones/>
     </main>
   );
 }

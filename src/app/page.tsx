@@ -5,6 +5,7 @@ import Header from "../components/header";
 import "./index.scss";
 import Card from "@/components/card";
 import { buscarFilmes } from "@/service/api";
+import Loader from "@/components/loader";
 
 interface Filme {
   id: number;
@@ -61,7 +62,7 @@ export default function Busca() {
         <h2>FILMES</h2>
         <div className="cards-container">
           {carregando ? (
-            <p>Carregando...</p>
+            <Loader/>
           ) : filmes.length > 0 ? (
             filmes.map((f) => (
               <Card key={f.id} id={f.id} titulo={f.nome} imagem={f.imagemUrl} />

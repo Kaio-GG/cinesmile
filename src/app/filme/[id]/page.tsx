@@ -1,13 +1,16 @@
 import Header from "@/components/header";
 import Image from "next/image";
 import "./index.scss";
-import { buscarFilmeId } from "@/service/api";
+import { buscarFilmeId, buscarEpisodios } from "@/service/api";
+import Episodios from "@/components/episodios/[id]";
+import Icones from "@/components/footer";
 
-export default async function Filme(props: any) {
-  const { id } = props.params;
 
-  const filme = await buscarFilmeId(id); 
-  
+export default async function Filme({ params }: any) {
+  const { id } = params;
+  const filme = await buscarFilmeId(id);
+  const episodios = await buscarEpisodios(id);
+
   if (!filme) {
     return (
       <main className="pg-ingressos">
@@ -20,14 +23,13 @@ export default async function Filme(props: any) {
   return (
     <main className="pg-ingressos">
       <Header />
-      <h3>FILME SELECIONADO</h3>
 
       <div className="menu">
         <Image
           src={filme.image?.original || "/assets/image/sem-imagem.svg"}
           alt={`Cartaz do filme ${filme.name}`}
-          height={500}
-          width={350}
+          height={540}
+          width={400}
           className="cartaz"
         />
 
@@ -50,8 +52,15 @@ export default async function Filme(props: any) {
               <p>{filme.summary?.replace(/<[^>]+>/g, "") || "Sinopse não disponível."}</p>
             </div>
           </div>
+
         </div>
       </div>
+          {!!episodios?.length && (
+            <div className="episodios">
+              <Episodios episodios={episodios} />
+            </div>
+          )}
+          <Icones/>
     </main>
   );
 }

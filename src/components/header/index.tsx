@@ -19,8 +19,8 @@ export default function Header(){
 
       <div className="pt-baixo">
         <div className="org">
-          <Link href="/" className={path === "/" ? "active" : ""}>HOME</Link>
-          <Link href="/favoritos" className={path === "/favoritos" ? "active" : ""}>FAVORITOS</Link>
+          <Link href="/" className={path === "/" ? "active" : ""}>Home</Link>
+          <Link href="/favoritos" className={path === "/favoritos" ? "active" : ""}>Favoritos</Link>
         </div>
       </div>
     </main>
