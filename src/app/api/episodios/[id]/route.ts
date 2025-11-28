@@ -2,10 +2,11 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export async function GET(
-  _request: NextRequest,
-  context: { params: { id: string } }
+  _request: Request,
+  { params }: { params: any }
 ) {
-  const { id } = context.params;
+  const id = params.id;
+
 
   try {
     const res = await fetch(`https://api.tvmaze.com/shows/${id}/episodes`);

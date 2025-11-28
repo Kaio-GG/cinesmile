@@ -7,7 +7,7 @@ import Icones from "@/components/footer";
 
 
 export default async function Filme({ params }: any) {
-  const { id } = params;
+  const { id } = await params;
   const filme = await buscarFilmeId(id);
   const episodios = await buscarEpisodios(id);
 
@@ -20,6 +20,7 @@ export default async function Filme({ params }: any) {
     );
   }
 
+  
   return (
     <main className="pg-ingressos">
       <Header />
