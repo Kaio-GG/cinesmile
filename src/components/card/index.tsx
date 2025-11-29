@@ -45,7 +45,7 @@ export default function Card({ titulo, imagem, id }: CardProps) {
   }
 
   return (
-    <Link href={`/catalogo/${id}`} className="cp-card-opcoes">
+    <Link href={`/filme/${id}`} className="cp-card-opcoes">
       <div className="img-container">
         <Image
           src={imagem}
