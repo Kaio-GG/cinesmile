@@ -6,7 +6,7 @@ export const baseUrl =
 
 export async function buscarFilmeId(id: string) {
   try {
-    const res = await fetch(`${baseUrl}/api/catalogo/${id}`, {
+    const res = await fetch(`${baseUrl}/api/filme/${id}`, {
       cache: "no-store",
     });
 
