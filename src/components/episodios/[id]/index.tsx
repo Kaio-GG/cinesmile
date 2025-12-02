@@ -18,7 +18,7 @@ export default function Episodios({ episodios }: { episodios: Ep[] }): JSX.Eleme
     acc[s].push(ep);
     return acc;
   }, {});
-
+  
   const seasons = Object.keys(temporadas)
     .map((k) => Number(k))
     .sort((a, b) => a - b);

@@ -12,7 +12,7 @@ interface CardProps {
 
 export default function Card({ titulo, imagem, id }: CardProps) {
   const [favorito, setFavorito] = useState(false);
-
+  
   useEffect(() => {
     const cookie = document.cookie
       .split("; ")
@@ -45,14 +45,16 @@ export default function Card({ titulo, imagem, id }: CardProps) {
   }
 
   return (
-    <Link href={`/filme/${id}`} className="cp-card-opcoes">
+    <Link href={`/serie/${id}`} className="cp-card-opcoes">
       <div className="img-container">
         <Image
           src={imagem}
           alt={titulo}  
           width={272}
           height={370}
+          quality={100}
           className="poster"
+          
         />
 
         <Image

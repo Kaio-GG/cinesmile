@@ -1,5 +1,5 @@
 .footer{
-    margin-top: 25vh;
+    margin-top: 12vh;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -11,6 +11,13 @@
     .signature{
         color: rgb(81, 81, 81);
     }
+
+    @media screen and (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+    gap: 14px;
+    padding: 20px 0;
+  }
 }
 
 .cp-icones {

@@ -4,9 +4,12 @@ export const baseUrl =
     ? window.location.origin
     : `https://${process.env.VERCEL_URL}`);
 
+
+
+
 export async function buscarFilmeId(id: string) {
   try {
-    const res = await fetch(`${baseUrl}/api/filme/${id}`, {
+    const res = await fetch(`http://localhost:3000/api/filme/${id}`, {
       cache: "no-store",
     });
 
@@ -22,7 +25,7 @@ export async function buscarFilmesFavoritos(ids: number[]) {
   try {
     if (!Array.isArray(ids) || ids.length === 0) return [];
 
-    const res = await fetch(`${baseUrl}/api/favorito`, {
+    const res = await fetch(`http://localhost:3000/api/favorito`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ids }),
@@ -36,21 +39,20 @@ export async function buscarFilmesFavoritos(ids: number[]) {
   }
 }
 
-export async function buscarFilmes(nome: string, genero: string) {
+export async function buscarTodosFilmes() {
   try {
-    const params = new URLSearchParams({ nome, genero });
-
-    const res = await fetch(`${baseUrl}/api/movies?${params.toString()}`, {
+    const res = await fetch(`${baseUrl}/api/movies`, {
       cache: "no-store",
     });
-
+    
     if (!res.ok) throw new Error("Erro ao buscar filmes");
     return res.json();
   } catch (error) {
-    console.error("Erro na API buscarFilmes:", error);
+    console.error("Erro na API buscarTodosFilmes:", error);
     return [];
   }
 }
+
 
 export async function buscarEpisodios(id: string) {
   try {
@@ -63,3 +65,30 @@ export async function buscarEpisodios(id: string) {
     return [];
   }
 }
+
+export async function buscarNome(nome: string) {
+  try {
+    const res = await fetch(`${baseUrl}/api/busca?nome=${nome}`, {
+      cache: "no-store",
+    });
+
+    if (!res.ok) {
+      console.log("Erro na resposta da API:", res.status);
+      return [];
+    }
+
+    const data = await res.json();
+    console.log(data);
+    return data;
+  } catch (err) {
+    console.error("Erro no fetch:", err);
+    return [];
+  }
+}
+
+export async function buscarGenero(genero: string) {
+  const res = await fetch(`/api/buscaGenero?genero=${genero}`,
+     { cache: "no-store" });
+  return res.json();
+}
+

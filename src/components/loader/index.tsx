@@ -4,12 +4,14 @@ import "./index.scss";
 
  export default function Loader(){
   return (
-    <div className="loading-wave">
-        <div className="loading-bar"></div>
-        <div className="loading-bar"></div>
-        <div className="loading-bar"></div>
-        <div className="loading-bar"></div>
-    </div>
+    <section className='org-loader'>
+        <div className="loading-wave">
+            <div className="loading-bar"></div>
+            <div className="loading-bar"></div>
+            <div className="loading-bar"></div>
+            <div className="loading-bar"></div>
+        </div>
+    </section>
 
   );
 }

@@ -32,7 +32,6 @@ const Icones = () => {
             <div className="tooltip">LinkedIn</div>
           </li>
 
-          {/* GITHUB */}
           <li className="icon-content">
             <a href="https://github.com/Kaio-GG" aria-label="GitHub" data-social="github">
               <div className="filled"></div>
@@ -53,7 +52,6 @@ const Icones = () => {
             <div className="tooltip">GitHub</div>
           </li>
 
-          {/* GMAIL */}
           <li className="icon-content">
             <a href="mailto:kaiofdss@gmail.com" aria-label="Gmail" data-social="gmail">
               <div className="filled"></div>
@@ -75,7 +73,7 @@ const Icones = () => {
             <div className="tooltip">kaiofdss@gmail.com</div>
           </li>
 
-          {/* WHATSAPP */}
+        
           <li className="icon-content">
             <a
               href="https://wa.me/11954707257"

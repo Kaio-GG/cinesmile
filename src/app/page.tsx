@@ -4,78 +4,126 @@ import React, { useState, useEffect } from "react";
 import Header from "../components/header";
 import "./index.scss";
 import Card from "@/components/card";
-import { buscarFilmes } from "@/service/api";
+import { buscarNome, buscarTodosFilmes, buscarGenero } from "@/service/api";
 import Loader from "@/components/loader";
+import Icones from "@/components/footer";
+import Image from "next/image";
 
 interface Filme {
+  image: { original: string };
+  genres?: string[];
   id: number;
-  nome: string;
-  imagemUrl: string;
+  name: string;
 }
 
 export default function Busca() {
+  const [filmesBase, setFilmesBase] = useState<Filme[]>([]);
+  const [carregando, setCarregando] = useState(false);
+  const [pagina, setPagina] = useState(1);
   const [nome, setNome] = useState("");
   const [genero, setGenero] = useState("");
-  const [filmes, setFilmes] = useState<Filme[]>([]);
-  const [carregando, setCarregando] = useState(false);
+
+  const limite = 30;
 
   useEffect(() => {
-    async function carregarFilmes() {
+    async function carregarInicial() {
       setCarregando(true);
+      try {
+        const data = await buscarTodosFilmes();
+        setFilmesBase(Array.isArray(data) ? data : [data]);
+      } finally {
+        setCarregando(false);
+      }
+    }
+    carregarInicial();
+  }, []);
 
-      const data = await buscarFilmes(nome, genero);
-
-      const lista: Filme[] = data.map((s: any) => ({
-        id: s.id,
-        nome: s.name,
-        imagemUrl: s.image?.medium || "/assets/image/sem-imagem.svg",
-      }));
-
-      setFilmes(lista);
+  async function carregarFilmesNome() {
+    if (!nome.trim()) return;
+    setCarregando(true);
+    try {
+      const data = await buscarNome(nome);
+      const filmes = Array.isArray(data)
+        ? data.map((i: any) => (i.show ? i.show : i))
+        : [data];
+      setFilmesBase(filmes);
+      setPagina(1);
+    } finally {
       setCarregando(false);
     }
+  }
 
-    carregarFilmes();
-  }, [nome, genero]);
+  async function carregarFilmesGenero() {
+    if (!genero.trim()) return;
+    setCarregando(true);
+    try {
+      const data = await buscarGenero(genero);
+      setFilmesBase(Array.isArray(data) ? data : [data]);
+      setPagina(1);
+    } finally {
+      setCarregando(false);
+    }
+  }
+
+  const totalPaginas = Math.max(1, Math.ceil(filmesBase.length / limite));
+  const filmesPaginados = filmesBase.slice((pagina - 1) * limite, pagina * limite);
 
   return (
     <main className="pg-landing">
       <Header />
 
-      <section className="fltros">
-        <h2>FILTRO</h2>
-        <div className="fillinput">
-          <input
-            value={nome}
-            onChange={(e) => setNome(e.target.value)}
-            placeholder="Nome"
-          />
-          <input
-            value={genero}
-            onChange={(e) => setGenero(e.target.value)}
-            placeholder="Gênero"
-          />
-        </div>
-      </section>
+      <section className="series">
+        <h2>BUSCAR</h2>
 
-      <section className="filmes">
-        <h2>FILMES</h2>
+        <div className="org-input">
+          <div className="caixa-input">
+            <input
+              value={nome}
+              onChange={(e) => setNome(e.target.value)}
+              placeholder="Nome"
+            />
+            <button className="btn-buscar" onClick={carregarFilmesNome}>
+              <Image className="buscar" src="/assets/image/busca-branco.svg" alt="" height={20} width={50} />
+            </button>
+          </div>
+
+          <div className="caixa-input">
+            <input
+              value={genero}
+              onChange={(e) => setGenero(e.target.value)}
+              placeholder="Gênero"
+            />
+            <button className="btn-buscar" onClick={carregarFilmesGenero}>
+              <Image className="buscar" src="/assets/image/busca-branco.svg" alt="" height={20} width={50} />
+            </button>
+          </div>
+        </div>
+
+        <h2>SÉRIES</h2>
+
         <div className="cards-container">
           {carregando ? (
-            <Loader/>
-          ) : filmes.length > 0 ? (
-            filmes.map((f) => (
-              <Card key={f.id} id={f.id} titulo={f.nome} imagem={f.imagemUrl} />
+              <Loader />
+          ) : filmesPaginados.length > 0 ? (
+            filmesPaginados.map((f) => (
+              <Card key={f.id} id={f.id} titulo={f.name} imagem={f.image?.original || ""} />
             ))
           ) : (
-            <p>
-              <br />
-              <br />
-              Nenhum resultado encontrado.
-            </p>
+            <p>Nenhum resultado encontrado.</p>
           )}
         </div>
       </section>
+
+      <div className="nav">
+        <button className="btn" disabled={pagina === 1} onClick={() => setPagina(pagina - 1)}>
+          <Image src="/assets/image/seta-esquerda.svg" alt="" height={20} width={50} />
+        </button>
+        <span>{pagina}</span>
+        <button className="btn" disabled={pagina === totalPaginas} onClick={() => setPagina(pagina + 1)}>
+          <Image src="/assets/image/seta-direita.svg" alt="" height={20} width={50} />
+        </button>
+      </div>
+      <Icones />
     </main>
   );
 }

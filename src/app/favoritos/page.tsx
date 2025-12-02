@@ -22,6 +22,7 @@ export default async function Favoritos() {
 
 if (listaIds.length > 0) {
   filmes = await buscarFilmesFavoritos(listaIds);
+  
 }
 
   return (

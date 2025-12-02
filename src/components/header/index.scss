@@ -17,27 +17,41 @@
     height: 30px;
     width: 100vw;
     background-color: #171717;
-    padding: 0px 15px 0px 15px;
     display: flex;
     align-items: center;
-
+    
+    .opt{
+      width: 100px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     .org {
       display: flex;
-      gap: 20px;
       justify-content: space-between;
-
+      height: 30px;
+      align-items: center;
       a {
         color: #fff;
         cursor: pointer;
         transition: 0.2s;
 
         &:hover {
-          color: #f8d90f;      
+          color: #ffffff;
+          background-color: #F0A124;
+          height: 100%;
+              
         }
       }
 
       .active {
-        color: #F0A124;        
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        background-color: #F0A124;        
         font-weight: 600;
       }
     }

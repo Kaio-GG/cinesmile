@@ -2,47 +2,106 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   background-color: #121212;
   color: white;
   width: 100vw;
   min-height: 100vh;
-  .fltros {
-    margin-top: 5vh;
-    width: 90%;
+  
+  
+  .org-input {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+    width: 40%;
     text-align: left;
+    margin-bottom: 5vh;
+    
 
     h2 {
       margin-bottom: 10px;
     }
-
-    .fillinput {
+    
+    
+    .caixa-input{
       display: flex;
-      justify-content: center;
-      gap: 10px;
-
-      input {
-        padding: 8px;
-        border-radius: 5px;
-        border: none;
-        outline: none;
-        width: 200px;
-      }
+      flex-direction: row;
+      justify-content: space-between;
+      width: 45%;
+    }
+    input {
+      padding: 8px;
+      border-radius: 5px;
+      border: none;
+      outline: none;  
     }
   }
-
-  .filmes {
-    width: 90%;
+  
+  .series {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
     margin-top: 40px;
-
+    align-items: center;
     h2 {
       margin-bottom: 20px;
+      width: 100%;
+      align-items: flex-start;
     }
 
     .cards-container {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
-      justify-content: center;
+      justify-content: space-between;
+      width: 100%;
     }
   }
+  .nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 100px;
+    width: 350px;
+    
+  }
+  .btn-buscar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+
+  .btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    &:hover {
+      background-color: #F0A124;      
+      border: none;
+      border-radius: 5px;
+    }
+  }
+  @media (max-width: 760px){
+    .org-input .caixa-input {
+        width: 100%;
+      }
+    .org-input{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      width: 90%;
+    }
+    .org-input input{
+      width: 70%;
+    }
+  }
+  
 }

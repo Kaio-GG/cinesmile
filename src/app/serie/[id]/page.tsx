@@ -6,11 +6,12 @@ import Episodios from "@/components/episodios/[id]";
 import Icones from "@/components/footer";
 
 
-export default async function Filme({ params }: any) {
+export default async function Serie({ params }: any) {
   const { id } = await params;
   const filme = await buscarFilmeId(id);
   const episodios = await buscarEpisodios(id);
-
+  console.log(id);
+  console.log(episodios);  
   if (!filme) {
     return (
       <main className="pg-ingressos">
@@ -20,7 +21,7 @@ export default async function Filme({ params }: any) {
     );
   }
 
-  
+
   return (
     <main className="pg-ingressos">
       <Header />
