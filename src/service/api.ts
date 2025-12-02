@@ -9,7 +9,7 @@ export const baseUrl =
 
 export async function buscarFilmeId(id: string) {
   try {
-    const res = await fetch(`http://localhost:3000/api/filme/${id}`, {
+    const res = await fetch(`${baseUrl}/api/filme/${id}`, {
       cache: "no-store",
     });
 
@@ -25,7 +25,7 @@ export async function buscarFilmesFavoritos(ids: number[]) {
   try {
     if (!Array.isArray(ids) || ids.length === 0) return [];
 
-    const res = await fetch(`http://localhost:3000/api/favorito`, {
+    const res = await fetch(`${baseUrl}/api/favorito`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ids }),
@@ -56,10 +56,12 @@ export async function buscarTodosFilmes() {
 
 export async function buscarEpisodios(id: string) {
   try {
+    
     const res = await fetch(`${baseUrl}/api/episodios/${id}`, {
       cache: "no-store",
     });
     if (!res.ok) return [];
+    
     return res.json();
   } catch {
     return [];
@@ -78,7 +80,6 @@ export async function buscarNome(nome: string) {
     }
 
     const data = await res.json();
-    console.log(data);
     return data;
   } catch (err) {
     console.error("Erro no fetch:", err);
